@@ -40,12 +40,12 @@
                          debugger;
                          var nested = d3.nest()
                                         .key(function(d) {
-                                           debugger;
-                                           return d['date'].getUTCFullYear();
+                                          //  debugger;
+                                          //  return d['date'].getUTCFullYear();
                                         })
                                         .rollup(function(leaves) {
-                                           debugger;
-                                           return "";
+                                          //  debugger;
+                                          //  return "";
                                         })
                                         .entries(data);
                      };
@@ -54,7 +54,7 @@
 
                      d3.tsv("world_cup_geo.tsv", function(d) {
                        d['attendance'] = +d['attendance'];
-                       d['date'] = format.parse(d['date']);
+                       d['date'] = format(d['date']);
                        return d;
                      }, plot_points);
                    };
